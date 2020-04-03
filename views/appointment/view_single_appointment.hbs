@@ -1,0 +1,359 @@
+<!DOCTYPE html> 
+<html lang="en">
+	
+<!-- Mirrored from dreamguys.co.in/demo/BRF Appointment/template/appointments.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Mar 2020 19:59:32 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>BRF Appointment</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		
+		<!-- Favicons -->
+		<link href="/appointment/assets/img/favicon.png" rel="icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/appointment/assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="/appointment/assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="/appointment/assets/plugins/fontawesome/css/all.min.css">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="/appointment/assets/css/style.css">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="/appointment/assets/js/html5shiv.min.js"></script>
+			<script src="/appointment/assets/js/respond.min.js"></script>
+		<![endif]-->
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="/" class="navbar-brand logo">
+							BRF Appointment
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="/" class="menu-logo">
+								<img src="/appointment/assets/img/logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						<ul class="main-nav">
+							<li>
+								<a href="/">Home</a>
+							</li>
+							
+							
+							
+							
+						</ul>		 
+					</div>		 
+					
+				</nav>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							<nav aria-label="breadcrumb" class="page-breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="/">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Appointments</li>
+								</ol>
+							</nav>
+							<h2 class="breadcrumb-title">Appointments</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+						
+							<!-- Profile Sidebar -->
+							<div class="profile-sidebar">
+								<div class="widget-profile pro-widget-content">
+									<div class="profile-info-widget">
+										<a href="#" class="booking-doc-img">
+											<img src="/appointment/assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<h4>Dr. Babatunde Raji Fashola, SAN </h4>
+											
+											
+										</div>
+									</div>
+								</div>
+								<div class="dashboard-widget">
+									<nav class="dashboard-menu">
+										<ul>
+											<li class="active">
+												<a href="/home">
+													<i class="fas fa-calendar-check"></i>
+													<span>Home</span>
+												</a>
+											</li>
+											<li>
+												<a href="/calendar">
+													<i class="fas fa-columns"></i>
+													<span>Calendar</span>
+												</a>
+											</li>
+											
+											<li>
+												<a href="/generate_appointment">
+													<i class="fas fa-columns"></i>
+													<span>Generate Appointment</span>
+												</a>
+											</li>
+											
+											
+											
+										
+											
+											
+											<li>
+												<a href="/change_password">
+													<i class="fas fa-lock"></i>
+													<span>Change Password</span>
+												</a>
+											</li>
+											<li>
+												<a href="/logout">
+													<i class="fas fa-sign-out-alt"></i>
+													<span>Logout</span>
+												</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+							<!-- /Profile Sidebar -->
+							
+						</div>
+						
+						<div class="col-md-7 col-lg-8 col-xl-9">
+							<div class="appointments">
+							
+								<!-- Appointment List -->
+								
+								<div class="appointment-list">
+									<div class="profile-info-widget">
+										<a href="#" class="booking-doc-img">
+											<img src="/appointment/assets/img/patients/patient.jpg" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<h3><a href="#">{{appointment.title}}</a></h3>
+											<div class="patient-details">
+												<h5><i class="fas fa-envelope"></i> {{appointment.subject_matter}}</h5>
+												<h5><i class="far fa-clock"></i>Start: {{appointment.start}}</h5>
+												<h5><i class="far fa-clock"></i>End: {{appointment.end}}</h5>
+												<h5><i class="fas fa-map-marker-alt"></i> {{appointment.venue}}</h5>
+												
+											</div>
+										</div>
+									</div>
+									<div class="appointment-action">
+        
+                        <a href="/cancel_appointment/{{appointment._id}}" class="btn btn-sm bg-danger-light">
+                            <i class="fas fa-times"></i> Cancel
+                        </a>
+                        <a href="#" data-toggle="modal" data-target="#add_new_event" class="btn btn-primary btn-block">
+                        <i class="fas fa-plus"></i> Add Available Participant
+									</a>
+									</div>
+								</div>
+								<div class="doc-times">
+                                    {{#each participants}}
+                                    <div class="doc-slot-list">
+                                        {{{participant this}}} ({{{participant_position this}}})
+                                        <a href="/remove_participant/{{this._id}}/{{../appointment._id}}" class="delete_schedule">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                    {{/each}}
+                                    
+								</div>
+								<!-- /Appointment List -->
+							
+								<!-- Appointment List -->
+																<!-- /Appointment List -->
+								
+					
+								<!-- /Appointment List -->
+								
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<!-- Footer Top -->
+				<div class="footer-top">
+					
+				</div>
+				<!-- /Footer Top -->
+				
+				<!-- Footer Bottom -->
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0">&copy; 2020 BRF Appointment. All rights reserved.</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+								
+									<!-- Copyright Menu -->
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href="term-condition.html">Terms and Conditions</a></li>
+											<li><a href="privacy-policy.html">Policy</a></li>
+										</ul>
+									</div>
+									<!-- /Copyright Menu -->
+									
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+						
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+				
+			</footer>
+			<!-- /Footer -->
+		   
+			<!-- /Footer -->
+		   
+		</div>
+		<!-- /Main Wrapper -->
+		
+		<!-- Appointment Details Modal -->
+		<div class="modal fade custom-modal" id="appt_details">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Appointment Details</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<ul class="info-details">
+							<li>
+								<div class="details-header">
+									<div class="row">
+										<div class="col-md-6">
+											<span class="title">#APT0001</span>
+											<span class="text">21 Oct 2019 10:00 AM</span>
+										</div>
+										<div class="col-md-6">
+											<div class="text-right">
+												<button type="button" class="btn bg-success-light btn-sm" id="topup_status">Completed</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="title">Status:</span>
+								<span class="text">Completed</span>
+							</li>
+							<li>
+								<span class="title">Confirm Date:</span>
+								<span class="text">29 Jun 2019</span>
+							</li>
+							<li>
+								<span class="title">Paid Amount</span>
+								<span class="text">$450</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Appointment Details Modal -->
+	  <div class="modal custom-modal fade" id="add_new_event">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Add Participants</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form method="POST" action="/add_participant_appointment/{{appointment._id}}">
+							<div class="form-group">
+								<label>Add Participants</label>
+                                <input type="hidden" name="app_id" value="{{appointment._id}}" />
+								<select multiple class="form-control form-white" data-placeholder="Choose participants" name="participant">
+									{{#each negative_comparison}}
+									<option value="{{this._id}}">{{this.name}}</option>
+									{{/each}}
+								
+								</select>
+							</div>
+							
+							<div class="submit-section text-center">
+								<button type="submit" class="btn btn-primary save-category submit-btn">Save</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- jQuery -->
+		<script src="/appointment/assets/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="/appointment/assets/js/popper.min.js"></script>
+		<script src="/appointment/assets/js/bootstrap.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="/appointment/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="/appointment/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="/appointment/assets/js/script.js"></script>
+		
+	</body>
+
+<!-- Mirrored from dreamguys.co.in/demo/BRF Appointment/template/appointments.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Mar 2020 19:59:49 GMT -->
+</html>

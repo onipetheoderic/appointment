@@ -1,0 +1,370 @@
+<!DOCTYPE html> 
+<html lang="en">
+	
+<!-- Mirrored from dreamguys.co.in/demo/BRF Appointment/template/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Mar 2020 20:00:44 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>BRF Appointment</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		
+		<!-- Favicons -->
+		<link href="/appointment/assets/img/favicon.png" rel="icon">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/appointment/assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="/appointment/assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="/appointment/assets/plugins/fontawesome/css/all.min.css">
+		
+		<!-- Datetimepicker CSS -->
+		<link rel="stylesheet" href="/appointment/assets/css/bootstrap-datetimepicker.min.css">
+		
+		<!-- Full Calander CSS -->
+        <link rel="stylesheet" href="/appointment/assets/plugins/fullcalendar/fullcalendar.min.css">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="/appointment/assets/css/style.css">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="/appointment/assets/js/html5shiv.min.js"></script>
+			<script src="/appointment/assets/js/respond.min.js"></script>
+		<![endif]-->
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="/" class="navbar-brand logo">
+							BRF Appointment
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="/" class="menu-logo">
+								<img src="/appointment/assets/img/logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						<ul class="main-nav">
+							<li>
+								<a href="/">Home</a>
+							</li>
+							
+							
+							
+							
+						</ul>		 
+					</div>		 
+					
+				</nav>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col">
+							<nav aria-label="breadcrumb" class="page-breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="/">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Calendar</li>
+								</ol>
+							</nav>
+							<h2 class="breadcrumb-title">Calendar</h2>
+						</div>
+						<div class="col-auto text-right float-right ml-auto">
+							<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_event">Create Event</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						
+						<!-- Calendar Events -->
+						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title mb-0">Create An Appointment</h4>
+								</div>
+								<input type="hidden" id="all_appointments" name="appointments" value="{{all_apps}}">
+								<div class="card-body">
+									<div id="calendar-events" class="mb-3">
+										{{#each appointment}}
+										<div class="calendar-events" data-class="bg-{{this.className2}}"><i class="fas fa-circle text-{{this.className2}}"></i>{{this.title}}<span style="display:none">|{{this._id}}</span></div>
+										{{/each}}
+										{{!-- <div class="calendar-events" data-class="bg-success"><i class="fas fa-circle text-success"></i>Conference Call</div>
+										<div class="calendar-events" data-class="bg-danger"><i class="fas fa-circle text-danger"></i>One on One Meeting</div>
+										<div class="calendar-events" data-class="bg-warning"><i class="fas fa-circle text-warning"></i>WhatsApp Video Call</div> --}}
+									</div>
+									<div class="checkbox mb-3">
+										
+									</div>
+									<a href="#" data-toggle="modal" data-target="#add_new_event" class="btn btn-primary btn-block">
+										<i class="fas fa-plus"></i> Add Meeting
+									</a>
+
+									<a href="#" data-toggle="modal" data-target="#add_new_event2" class="btn btn-primary btn-block">
+										<i class="fas fa-plus"></i> Create Participant
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- /Calendar Events -->
+						
+						<!-- Calendar -->
+						<div class="col-md-7 col-lg-8 col-xl-9">
+							<div class="card">
+								<div class="card-body">
+									<div id="calendar"></div>
+								</div>
+							</div>
+						</div>
+						<!-- /Calendar -->
+						
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<!-- Footer Top -->
+				<div class="footer-top">
+					
+				</div>
+				<!-- /Footer Top -->
+				
+				<!-- Footer Bottom -->
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0">&copy; 2020 BRF Appointment. All rights reserved.</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+								
+									<!-- Copyright Menu -->
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href="term-condition.html">Terms and Conditions</a></li>
+											<li><a href="privacy-policy.html">Policy</a></li>
+										</ul>
+									</div>
+									<!-- /Copyright Menu -->
+									
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+						
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+				
+			</footer>
+			<!-- /Footer -->
+		   
+		</div>
+		<!-- /Main Wrapper -->
+		
+		<!-- Add Event Modal -->
+		<div id="add_event" class="modal custom-modal fade" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Add Event</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label>Event Name <span class="text-danger">*</span></label>
+								<input class="form-control" type="text">
+							</div>
+							<div class="form-group">
+								<label>Event Date <span class="text-danger">*</span></label>
+								<div class="cal-icon">
+									<input class="form-control datetimepicker" type="text">
+								</div>
+							</div>
+							<div class="submit-section">
+								<button class="btn btn-primary submit-btn">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Add Event Modal -->
+		
+		<!-- Add Event Modal -->
+		<div class="modal custom-modal fade none-border" id="my_event">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Add Event</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer justify-content-center">
+						<button type="button" class="btn btn-success save-event submit-btn">Edit Event</button>
+						<button type="button" class="btn btn-danger delete-event submit-btn" data-dismiss="modal">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Add Event Modal -->
+
+		
+		<!-- Add Category Modal -->
+		<div class="modal custom-modal fade" id="add_new_event">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Add Appointment</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form>
+						
+							<div class="form-group">
+								<label>Event Name</label>
+								<input class="form-control form-white" placeholder="Event Name" type="text" name="event_name" />
+							</div>
+							<div class="form-group">
+								<label>Subject Matter</label>
+								<input class="form-control form-white" placeholder="Subject Matter" type="text" name="subject_matter" />
+							</div>
+							<div class="form-group">
+								<label>Date</label>
+								<input class="form-control form-white" required placeholder="Date" type="date" name="date" />
+							</div>
+							<div class="form-group">
+								<label>Start Time</label>
+								<input class="form-control form-white" required placeholder="Start Time" type="time" name="start_time" />
+							</div>
+							<div class="form-group">
+								<label>End Time</label>
+								<input class="form-control form-white" required placeholder="End Time" type="time" name="end_time" />
+							</div>
+							<div class="form-group">
+								<label>Venue</label>
+								<input class="form-control form-white" required placeholder="Venue" type="text" name="venue" />
+							</div>
+							
+							<div class="form-group">
+								<label>Choose Color</label>
+								<select class="form-control form-white" required data-placeholder="Choose a color..." name="className">
+									<option value="success">Success</option>
+									<option value="danger">Red</option>
+									<option value="info">Info</option>
+									<option value="primary">Primary</option>
+									<option value="warning">Warning</option>
+									<option value="inverse">Inverse</option>
+								</select>
+							</div>
+							{{!-- <div class="form-group">
+								<label>Add Participants</label>
+								<select multiple class="form-control form-white" data-placeholder="Choose participants" name="participant">
+									{{#each participant}}
+									<option value="{{this._id}}">{{this.name}}</option>
+									{{/each}}
+								
+								</select>
+							</div> --}}
+							
+							<div class="submit-section text-center">
+								<button type="button" class="btn btn-primary save-category submit-btn" data-dismiss="modal">Save</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Add Category Modal -->
+	  	<div class="modal custom-modal fade" id="add_new_event2">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Add A Participant</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label>Participant Name</label>
+								<input class="form-control form-white" placeholder="Enter name" type="text" name="name" />
+							</div>
+							<div class="form-group">
+								<label>Participant Position</label>
+								<input class="form-control form-white" placeholder="Enter position" type="text" name="position" />
+							</div>
+							<div class="submit-section text-center">
+								<button type="button" class="btn btn-primary save-participant submit-btn" data-dismiss="modal">Save</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- jQuery -->
+		<script src="/appointment/assets/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="/appointment/assets/js/popper.min.js"></script>
+		<script src="/appointment/assets/js/bootstrap.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="/appointment/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="/appointment/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+		
+		<!-- Datetimepicker JS -->
+		<script src="/appointment/assets/js/moment.min.js"></script>
+		<script src="/appointment/assets/js/bootstrap-datetimepicker.min.js"></script>
+		
+		<!-- Full Calendar JS -->
+        <script src="/appointment/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <script src="/appointment/assets/plugins/fullcalendar/fullcalendar.min.js"></script>
+        <script src="/appointment/assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="/appointment/assets/js/script.js"></script>
+		
+	</body>
+
+<!-- Mirrored from dreamguys.co.in/demo/BRF Appointment/template/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Mar 2020 20:00:46 GMT -->
+</html>
